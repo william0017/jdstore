@@ -1,18 +1,14 @@
-<table class="table table-boldered">
+<div class="row">
   <% @products.each do |product| %>
-  <tr>
-    <td>
-      <%= link_to(product.title, product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to(product.description, product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to(product.quantity, product_path(product)) %>
-    </td>
-    <td>
-      <%= link_to(product.price, product_path(product)) %>
-    </td>
-  </tr>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to product_path(product) do %>
+        <% if product.picture.present? %>
+          <%= image_tag(product.picture.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= product.title %> $ <%= product.price %>
+    </div>
   <% end %>
-</table>
+</div>
