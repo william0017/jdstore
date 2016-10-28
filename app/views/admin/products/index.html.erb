@@ -7,12 +7,13 @@
   <table class="table table-boldered">
       <thead>
         <tr>
-          <td>title</td>
-          <td>description</td>
-          <td>price</td>
-          <td>quantity</td>
-          <td>Choice</td>
-          <td>Time</td>
+          <td>名称</td>
+          <td>细节</td>
+          <td>价格</td>
+          <td>库存</td>
+          <td>图片</td>
+          <td>操作</td>
+          <td>上架时间</td>
         </tr>
       </thead>
 
@@ -23,15 +24,17 @@
             <%= link_to(product.title, admin_product_path(product)) %>
           </td>
           <td>
-            <%= link_to(product.description, admin_product_path(product)) %>
+            <%= product.description %>
           </td>
           <td>
-            <%= link_to(product.price, admin_product_path(product)) %>
+            <%= product.price %>
           </td>
           <td>
-            <%= link_to(product.quantity, admin_product_path(product)) %>
+            <%= product.quantity %>
           </td>
-
+          <td>
+            <img src="<%= product.image.thumb %>">
+          </td>
           <td>
             <%= link_to("Edit", edit_admin_product_path(product)) %>
             <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>

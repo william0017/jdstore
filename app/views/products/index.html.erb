@@ -1,36 +1,27 @@
 <h1> 产品预览 </h1>
+<body>
+  <div class="container">
+    <div class="row">
+      <% @products.each do |product| %>
+      <div class="col-md-4 col-sm-6">
+        <div class="preview-panel">
+          <div>
+            <img src="<%= product.image.thumb %>">
+            <br>
+            产品：
+            <%= link_to(product.title, product_path(product)) %>
+            <br>
+            细节：
+            <%= product.description %>
+            <br>
+            价格：
+            <%= product.price %>
+          </div>
+        </div>
+      </div>
 
-<table class="table table-boldered">
-    <thead>
-      <tr>
-        <td>title</td>
-        <td>description</td>
-        <td>price</td>
-        <td>quantity</td>
-        <td>Time</td>
-      </tr>
-    </thead>
 
-    <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td>
-          <%= link_to(product.title, product_path(product)) %>
-        </td>
-        <td>
-          <%= product.description %>
-        </td>
-        </td>
-        <td>
-          <%= product.price %>
-        </td>
-        <td>
-          <%= product.quantity %>
-        </td>
-        <td>
-          <%= product.created_at %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+
+  </div>
+</body>

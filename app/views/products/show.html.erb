@@ -1,12 +1,23 @@
-<h1> <%= @product.title %> </h1>
+<!DOCTYPE html>
+  <html>
+  <body>
+    <div class="container">
 
-<p>
-  <%= simple_format(@product.description) %>
+        <div class="col-md-7">
+          <div class="overview-panel">
+            <a target="_blank" href="/"> 返回
+              <img src="<%= @product.image %>" class="img-responsive" alt="jindgong store">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="well">
+            <h4>产品： <%= @product.description %></h4>
+              <h4>价格： <%= @product.price %></h4>
+              <h5> 库存：<%= @product.quantity %></h5>
+          </div>
+       </div>
 
-  <%= @product.price %>
-  <br>
-  <%= @product.quantity %>
-
-
-
-</p>
+  </div>
+  </body>
+  </html>
