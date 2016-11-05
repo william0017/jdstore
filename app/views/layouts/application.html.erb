@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+
+
   <head>
     <title>Jdstore</title>
     <%= csrf_meta_tags %>
@@ -9,10 +11,19 @@
   </head>
 
   <body>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
 
       <div class="container-fluid">
           <%= render "common/navbar" %>
           <%= render "common/flashes" %>
+          <h3>欢迎来到火影的世界</h3>
+          <section class="top-img top-img_old">
+               <img src="http://pic2.52pk.com/files/081221/73_013851.png" alt="" class="dark">
+
+           </section>
+           <br><br>
+           <p>热销商品</p>
           <%= yield %>
       </div>
 
@@ -20,3 +31,14 @@
 
   </body>
 </html>
+
+
+<!-- <div class="text wrapper clearfix">
+  <div class="type-wrap">
+     <img src="http://walkya.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/logo_white.png" alt="WalkMe" class="logo">
+    <h1 id="typed1">Stop Confusing Your Users</h1><span class="typed-cursor">|</span>
+     <h1 style="" class="words mywords" data-type-words=""></h1>
+    <p class="bottom_sentence" style="display: block;">Use WalkMe to Create Step-by-Step Tutorials to Simplify Your Enterprise Software or Website</p>
+     <button id="button" style="" plan="0" class="effeckt-button active popup-signup _btn button main-button" data-effeckt-type="expand-right"><span class="label">Get Started for Free</span> <span class="spinner"></span></button>
+  </div>
+</div> -->

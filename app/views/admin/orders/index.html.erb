@@ -30,6 +30,7 @@
         <td>
           <%= link_to("取消订单", notify_order_cancel_by_admin_order_path(order.token), method: :post, data: { confirm: "Are you sure?" }) %>
           <%= link_to("出货", ship_order_path(order.token), method: :post, data: { confirm: "Are you sure?" }) %>
+
         </td>
     <% end %>
   </tbody>
